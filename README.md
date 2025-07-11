@@ -21,7 +21,38 @@
 - To co wyżej xD z tym że w data/ są pliki.json, ze zmiennymi.
 ### **`templates/*`**
 - Różne fragmenty strony typu head.html / footer.html które mogą zostać wstrzyknięte w całości do DOM xD
----
-
+  
 ## { ??? }
 - Jak coś wymyśle to dodam xD
+
+---
+
+# Example
+### `index.html`
+```html
+<head id="head"></head>
+<body>
+  <h1>Welcome to ${title}</h1>
+  <p>Maintained by ${team[0].name}</p>
+
+  <div id="footer"></div>
+  <script src="/render.js"></script>
+</body>
+```
+### `config.json`
+```json
+{
+  "title": "Szmelc.INC",
+  "description": "Entropy awaits",
+  "css": "/assets/style.css",
+  "js": "/assets/main.js",
+  "footerText": "© 2025 Szmelc.INC"
+}
+```
+### `template/head.html`
+```html
+<title>${title}</title>
+<link rel="stylesheet" href="${css}">
+<script src="${js}" defer></script>
+<meta name="description" content="${description}">
+```
